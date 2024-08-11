@@ -1,0 +1,6 @@
+# Ignore the odoo folder
+/odoo/
+
+# Other ignores
+node_modules/
+*.log

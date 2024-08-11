@@ -1,0 +1,39 @@
+version: '3.0'
+
+services:
+  odoo:
+    image: odoo:17
+
+    container_name: odoo_librarian
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+      - POSTGRES_DB=postgres
+    restart: always
+    networks:
+        - odoo-network
+    command: ["-d","odoo","-u","real_estate_ads","--addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"]
+
+  db:
+    image: postgres:15
+    container_name: db_Librarian
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    restart: always
+    networks:
+        - odoo-network
+
+networks:
+  odoo-network:
