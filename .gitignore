@@ -1,5 +1,6 @@
 # Ignore the odoo folder
 /odoo/
+/data/
 
 # Other ignores
 node_modules/
