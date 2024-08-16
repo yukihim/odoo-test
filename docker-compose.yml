@@ -20,7 +20,7 @@ services:
     restart: always
     networks:
         - odoo-network
-    #command: ["-d","odoo","-u","real_estate_ads","--addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"]
+    # command: ["-d","odoo","-u","real_estate_ads","--addons-path=/mnt/extra-addons,/usr/lib/python3/dist-packages/odoo/addons"]
     command: ["-u","real_estate_ads"]
 
   db:

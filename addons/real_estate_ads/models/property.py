@@ -1,4 +1,4 @@
-from odoo import fields, models, api
+from odoo import fields, models
 
 
 
@@ -28,4 +28,4 @@ class Property(models.Model):
         ], string="Garden Orientation", default='north')
     total_area = fields.Integer(string="Total Area (sqm)")
     
-    id = fields.Integer()
+    # id = fields.Integer()
