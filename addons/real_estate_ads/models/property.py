@@ -28,4 +28,4 @@ class Property(models.Model):
         ], string="Garden Orientation", default='north')
     total_area = fields.Integer(string="Total Area (sqm)")
     
-    id, create_date, create_uid, write_date, write_uid
+    id = fields.Integer()
