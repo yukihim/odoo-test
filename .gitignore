@@ -1,6 +1,7 @@
 # Ignore the odoo folder
 /odoo/
 /data/
+/addons/real_estate_ads/__pycache__/
 
 # Other ignores
 node_modules/
